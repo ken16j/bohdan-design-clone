@@ -1,4 +1,5 @@
 import type { CSSProperties, ReactNode } from "react";
+import { assetPath } from "@/lib/asset-path";
 
 interface Metric {
   value: string;
@@ -203,7 +204,7 @@ function ThumbnailWithBrackets({ src, alt }: { src: string; alt: string }) {
         />
       ))}
       <img
-        src={src}
+        src={assetPath(src)}
         alt={alt}
         style={{
           width: "100%",
@@ -351,7 +352,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           {mainImage && (
             <div style={{ marginTop: 32 }}>
               <img
-                src={mainImage}
+                src={assetPath(mainImage)}
                 alt={`${project.title} main mockup`}
                 style={{
                   width: "100%",
@@ -376,7 +377,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           {thumbnails.map((img, i) => (
             <ThumbnailWithBrackets
               key={i}
-              src={img}
+              src={assetPath(img)}
               alt={`${project.title} thumbnail ${i + 1}`}
             />
           ))}

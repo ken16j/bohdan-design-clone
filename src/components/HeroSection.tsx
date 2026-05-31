@@ -1,13 +1,14 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { assetPath } from "@/lib/asset-path";
 
 const TOTAL_FRAMES = 190;
 const PRELOAD_COUNT = 10;
 
 function getFrameSrc(index: number): string {
   const padded = String(index + 1).padStart(3, "0");
-  return `/images/hero-sequence/${padded}.webp`;
+  return assetPath(`/images/hero-sequence/${padded}.webp`);
 }
 
 function CornerBrackets() {

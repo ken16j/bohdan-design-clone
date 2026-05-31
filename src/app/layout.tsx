@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   title: "Bohdan Skrypka — Product Designer",
   description: "A product designer shaping experiences users choose and competitors chase.",
   icons: {
-    icon: "/seo/favicon.png",
+    icon: process.env.NODE_ENV === "production" ? "/bohdan-design-clone/seo/favicon.png" : "/seo/favicon.png",
   },
 };
 
